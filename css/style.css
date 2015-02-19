@@ -69,6 +69,12 @@ section {
     line-height: 2em; }
   section input {
     text-align: center; }
+  section input.ng-dirty.ng-invalid {
+    border: 2px solid red; }
+  section .error {
+    height: 22%;
+    margin-top: 8%;
+    width: 75%; }
 
 body .secOne {
   width: 30%;

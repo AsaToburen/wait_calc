@@ -14,34 +14,40 @@
     <header class="box-heading">Enter the Meal Details</header>
       <form name="mealDetails" novalidate ng-submit="submit()">
         <p>
-          <label for="base-price">Base Meal Price: $ <input type="number" ng-model="data.base_price" required>
+          <label for="base-price">Base Meal Price: $ <input type="number" name="base_price" ng-model="bill.base_price" required>
           </label></p>
-        <p><label for="tax-rate">Tax Rate: % <input type="number" ng-model="data.tax_rate" required>
+        <p><label for="tax-rate">Tax Rate: % <input type="number" name="tax_rate" ng-model="bill.tax_rate" required>
           </label></p>
-        <p><label for="tip-percentage">Tip Percentage: % <input type="number" ng-model="data.tip_percentage" required>
+        <p><label for="tip-percentage">Tip Percentage: % <input type="number" name="tip_percentage" ng-model="bill.tip_percentage" required>
           </label></p>
+      <button name="mealDetails" type="submit"  class="submit">Submit</button>
+      <button ng-click="cancel()">Cancel</button>
       </form>
-      <button class="submit" name="mealDetails" type="submit">>Submit</button>
-      <button>Cancel</button>
+      <div class="error" ng-if="mealDetails.$submitted" ng-messages="mealDetails.$error">
+        <span class="error" ng-message="required">Field is required!</span>
+        <p>{{bill}}</p>
+      </div>
     </section>
     <section class="secTwo">
       <div class="customer">
         <header class="box-heading">Customer Charges</header>
-        <p>Subtotal {{data.base_price | currency}}</p>
-        <p class="tip">Tip {{ | currency}}</p>
+        <p>Subtotal {{ cust.subtotal | currency }}</p>
+        <p class="tip">Tip {{ cust.tip | currency }}</p>
         <hr/>
-        <p>Total {{ | currency}}</p>
+        <p>Total {{ cust.total | currency }}</p>
       </div>
       <div class="earning">
         <header class="box-heading">My Earning Info</header>
-        <p>Tip Total: {{}}</p>
-        <p>Meal count: {{}}</p>
-        <p>Average Tip Per Meal: {{}}</p>
+        <p>Tip Total: {{staff.tips | currency}}</p>
+        <p>Meal count: {{staff.meals}}</p>
+        <p>Average Tip Per Meal: {{staff.avgTips | currency}}</p>
+
       </div>
     </section>
   </div>
   <button class="reset">Reset</button>
 </body>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-messages.js"></script>

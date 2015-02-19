@@ -102,6 +102,16 @@ body {
       input {
         text-align: center;
       }
+
+      input.ng-dirty.ng-invalid {
+        border: 2px solid red;
+      }
+      
+      .error {
+        height: 22%;
+        margin-top: 8%;
+        width: 75%;
+      }
   }
 
 
