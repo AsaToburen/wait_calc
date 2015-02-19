@@ -61,7 +61,7 @@ section {
   section div {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 7%;
+    margin-bottom: 8%;
     height: 60%;
     border: 2px solid black; }
   section p {
@@ -75,6 +75,11 @@ section {
     height: 22%;
     margin-top: 8%;
     width: 75%; }
+    section .error span {
+      width: 100%;
+      display: block;
+      line-height: 1.75em;
+      margin-left: 1.5%; }
 
 body .secOne {
   width: 30%;

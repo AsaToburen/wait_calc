@@ -72,16 +72,8 @@ body {
   width: 7em;
   border-radius: 0;
   padding: .75%;
+  }
 }
-
-}
-
-//.wrapper {
-//  width: 67%;
-//  height: 35em;
-//
-//  margin: 0 auto;
-
   section {
     width: 30%;
     height: 73%;
@@ -91,7 +83,7 @@ body {
       div {
         width: 90%;
         margin: 0 auto;
-        margin-bottom: 7%;
+        margin-bottom: 8%;
         height: 60%;
         border: 2px solid black;
       }
@@ -111,6 +103,12 @@ body {
         height: 22%;
         margin-top: 8%;
         width: 75%;
+        span {
+          width: 100%;
+          display: block;
+          line-height: 1.75em;
+          margin-left: 1.5%;
+        }
       }
   }
 
