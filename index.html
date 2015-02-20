@@ -31,7 +31,7 @@
         <button name="mealDetails" type="submit"  class="submit">Submit</button>
         <button ng-click="cancel()">Cancel</button>
       </form>
-      <div class="error" ng-if="mealDetails.$submitted && mealDetails.$invalid" ng-messages="mealDetails.$error">
+      <div class="error" ng-if="mealDetails.$submitted && mealDetails.$invalid && mealDetails.$touched" ng-messages="mealDetails.$error">
       <!-- <span class="error" ng-message="required">Field is required!</span> -->
         <span ng-show="mealDetails.base_price.$error.required">Enter a price</span>
         <span ng-show="mealDetails.tax_rate.$error.required">Enter a rate of tax</span>
