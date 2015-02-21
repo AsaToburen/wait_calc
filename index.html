@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="firstModule">
+<html lang="en" ng-app="waitstaffMod">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
   <title>Waitstaff Calculator</title>
 </head>
-<body ng-controller="ctrlOne">
+<body ng-controller="calcCtrl">
   <header class="main-header">
     <h1>Waitstaff Calculator</h1>
   </header>
   <div class="wrapper" >
-    <section class="secOne">
+    <section class="meal-entry">
       <header class="box-heading">Enter the Meal Details</header>
       <form name="mealDetails" novalidate ng-submit="submit()">
         <p>
@@ -31,13 +31,13 @@
         <button name="mealDetails" type="submit"  class="submit">Submit</button>
         <button ng-click="cancel()">Cancel</button>
       </form>
-      <div class="error" ng-if="mealDetails.$submitted && mealDetails.$invalid" ng-messages="mealDetails.$error">
-        <span ng-show="mealDetails.base_price.$error.required">Enter a price</span>
-        <span ng-show="mealDetails.tax_rate.$error.required">Enter a rate of tax</span>
-        <span ng-show="mealDetails.tip_percentage.$error.required">Enter a tip percentage</span>
+      <div class="error" ng-show="mealDetails.$error">
+        <span ng-if="mealDetails.base_price.$error.number">Enter a price</span>
+        <span ng-if="mealDetails.tax_rate.$error.number">Enter a rate of tax</span>
+        <span ng-if="mealDetails.tip_percentage.$error.number">Enter a tip percentage</span>
       </div>
     </section>
-    <section class="secTwo">
+    <section class="mealOutput">
       <div class="customer">
         <header class="box-heading">Customer Charges</header>
         <p>Subtotal {{ cust.subtotal | currency }}</p>

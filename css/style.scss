@@ -103,6 +103,7 @@ body {
         height: 22%;
         margin-top: 8%;
         width: 75%;
+        border: 0;
         span {
           width: 100%;
           display: block;
@@ -114,7 +115,7 @@ body {
 
 
 body {
-  .secOne {
+  .meal-entry {
     width: 30%;
     border: 2px solid black;
     margin-left: 15%;
@@ -127,7 +128,7 @@ body {
     p {
       line-height: 3em;
       text-align: right;
-       margin-right: 4em;
+       margin-right: 8em;
 
     }
     input {
@@ -142,7 +143,7 @@ body {
       
     }
     .submit {
-      margin-left: 6em;
+      margin-left: 10em;
     }
   }
 
@@ -163,7 +164,7 @@ body {
 
     p{
       text-align: right;
-      margin-right: 9em;
+      margin-right: 12em;
     }
     hr {
       color: black;

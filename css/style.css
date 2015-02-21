@@ -74,35 +74,36 @@ section {
   section .error {
     height: 22%;
     margin-top: 8%;
-    width: 75%; }
+    width: 75%;
+    border: 0; }
     section .error span {
       width: 100%;
       display: block;
       line-height: 1.75em;
       margin-left: 1.5%; }
 
-body .secOne {
+body .meal-entry {
   width: 30%;
   border: 2px solid black;
   margin-left: 15%;
   margin-right: 4%;
   height: 25.9em; }
-  body .secOne header {
+  body .meal-entry header {
     margin-bottom: .5em; }
-  body .secOne p {
+  body .meal-entry p {
     line-height: 3em;
     text-align: right;
-    margin-right: 4em; }
-  body .secOne input {
+    margin-right: 8em; }
+  body .meal-entry input {
     width: 20%; }
-  body .secOne button {
+  body .meal-entry button {
     width: 7em;
     border-radius: 0;
     padding: 2%;
     margin-top: 5em;
     margin-left: 2em; }
-  body .secOne .submit {
-    margin-left: 6em; }
+  body .meal-entry .submit {
+    margin-left: 10em; }
 body .box-heading {
   width: 100%;
   height: 2.3em;
@@ -117,7 +118,7 @@ body .customer {
     margin-bottom: 1em; }
   body .customer p {
     text-align: right;
-    margin-right: 9em; }
+    margin-right: 12em; }
   body .customer hr {
     color: black;
     width: 40%;

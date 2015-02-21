@@ -1,9 +1,9 @@
 
-angular.module('firstModule', [
+angular.module('waitstaffMod', [   
   'ngMessages'
   ])
 
-  .controller('ctrlOne', ['$scope', function($scope) {
+  .controller('calcCtrl', ['$scope', function($scope) { 
     $scope.cust = {};
     $scope.staff = {
       meals : 0,
@@ -12,14 +12,15 @@ angular.module('firstModule', [
     };
 
   $scope.compute = function() {
-    if($scope.mealDetails.$submitted && $scope.mealDetails.$valid && !($scope.mealDetails.$pristine)) {
-      $scope.cust.subtotal = $scope.bill.base_price * (($scope.bill.tax_rate/100)+1);
-      $scope.cust.tip = $scope.cust.subtotal * (($scope.bill.tip_percentage/100));
-      $scope.cust.total = $scope.cust.tip + $scope.cust.subtotal;
-      $scope.staff.tips += $scope.cust.tip;
-      $scope.staff.meals++;
+    $scope.cust.subtotal = $scope.bill.base_price * (($scope.bill.tax_rate/100)+1);
+    $scope.cust.tip = $scope.cust.subtotal * (($scope.bill.tip_percentage/100));
+    $scope.cust.total = $scope.cust.tip + $scope.cust.subtotal;
+    $scope.staff.tips += $scope.cust.tip;
+    $scope.staff.meals++;
+
+    if ( $scope.staff.meals > 0 ) {
       $scope.staff.avgTips = $scope.staff.tips/$scope.staff.meals;
-    }
+    }   
   };
 
   $scope.submit = function() { 
