@@ -5,58 +5,22 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Waitstaff Calculator</title>
 </head>
-<body ng-controller="calcCtrl">
+<body>
   <header class="main-header">
     <h1>Waitstaff Calculator</h1>
   </header>
-  <div class="wrapper" >
-    <section class="meal-entry">
-      <header class="box-heading">Enter the Meal Details</header>
-      <form name="mealDetails" novalidate ng-submit="submit()">
-        <p>
-          <label for="base-price">Base Meal Price: $ 
-            <input type="number" name="base_price" ng-model="bill.base_price" required>
-          </label>
-        </p>
-        <p>
-          <label for="tax-rate">Tax Rate: % 
-            <input type="number" name="tax_rate" ng-model="bill.tax_rate" required>
-          </label>
-        </p>
-        <p>
-          <label for="tip-percentage">Tip Percentage: % 
-            <input type="number" name="tip_percentage" ng-model="bill.tip_percentage" required>
-          </label>
-        </p>
-        <button name="mealDetails" type="submit"  class="submit">Submit</button>
-        <button ng-click="cancel()">Cancel</button>
-      </form>
-      <div class="error" ng-show="mealDetails.$error">
-        <span ng-if="mealDetails.base_price.$error.number">Enter a price</span>
-        <span ng-if="mealDetails.tax_rate.$error.number">Enter a rate of tax</span>
-        <span ng-if="mealDetails.tip_percentage.$error.number">Enter a tip percentage</span>
-      </div>
-    </section>
-    <section class="mealOutput">
-      <div class="customer">
-        <header class="box-heading">Customer Charges</header>
-        <p>Subtotal {{ cust.subtotal | currency }}</p>
-        <p class="tip">Tip {{ cust.tip | currency }}</p>
-        <hr/>
-        <p>Total {{ cust.total | currency }}</p>
-      </div>
-      <div class="earning">
-        <header class="box-heading">My Earning Info</header>
-        <p>Tip Total: {{staff.tips | currency}}</p>
-        <p>Meal count: {{staff.meals}}</p>
-        <p>Average Tip Per Meal: {{staff.avgTips | currency}}</p>
-      </div>
-    </section>
+  <nav>
+    <a href="#/">Home</a>
+    <a class="n-meal" href="#/new-meal">New Meal</a>
+    <a href="#/my-earnings">My Earnings</a>
+  </nav>
+  <div ng-view>
+      
   </div>
-  <button class="reset" ng-click="reset()">Reset</button>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-messages.js"></script>
-<script src="js/app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-messages.js"></script>
+  <script src="js/app.js"></script>
 </html>

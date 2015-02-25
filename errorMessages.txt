@@ -1,0 +1,5 @@
+    <div class="error" ng-show="mealDetails.$error">
+      <span ng-if="mealDetails.base_price.$error.number">Enter a price</span>
+      <span ng-if="mealDetails.tax_rate.$error.number">Enter a rate of tax</span>
+      <span ng-if="mealDetails.tip_percentage.$error.number">Enter a tip percentage</span>
+    </div>

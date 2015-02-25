@@ -1,9 +1,21 @@
 
-angular.module('waitstaffMod', [   
-  'ngMessages'
-  ])
+angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
+  .config(['$routeProvider', function($routeProvider){
+    $routeProvider.when('/', {
+      templateUrl : 'home.html',
+      controller : 'HomeCtrl'
+    }).when('/new-meal', {
+      templateUrl : 'new-meal.html',
+      controller: 'newMealCtrl'
+    }).when('/my-earnings', {
+      templateUrl : 'my-earnings.html',
+      controller: 'newMealCtrl'
+    });
+  }])
+  .controller('HomeCtrl', ['$scope', function($scope) {
 
-  .controller('calcCtrl', ['$scope', function($scope) { 
+  }])
+  .controller('newMealCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
     $scope.cust = {};
     $scope.staff = {
       meals : 0,
@@ -44,6 +56,7 @@ angular.module('waitstaffMod', [
   };
 
   }]);
+
 
 
 
