@@ -1,66 +1,59 @@
-
 angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
+  .factory('Data', function () {
+    return { 
+      cust : {},
+      staff : {
+        meals : 0,
+        tips : 0,
+        avgTips : 0 
+      },
+      compute : function() {
+        cust.subtotal = bill.base_price * ((bill.tax_rate/100)+1);
+        cust.tip = cust.subtotal * ((bill.tip_percentage/100));
+        cust.total = cust.tip + cust.subtotal;
+        staff.tips += cust.tip;
+        staff.meals++;
+        if ( staff.meals > 0 ) {
+          staff.avgTips = staff.tips/staff.meals;
+        }   
+      },
+      submit : function() { 
+        if(mealDetails.$submitted && mealDetails.$valid && !(mealDetails.$pristine)) {
+            compute();
+        }
+      },
+      cancel : function() {  
+        mealDetails.$setPristine();
+        bill = {};
+      },
+      reset : function() {
+        mealDetails.$setPristine();
+        bill = {};
+        cust = {};
+        staff.meals = 0;
+        staff.tips = 0;
+        staff.avgTips = 0;
+      }
+    };
+  })
   .config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
       templateUrl : 'home.html'
     }).when('/new-meal', {
-      templateUrl : 'new-meal.html'
+      templateUrl : 'new-meal.html',
+      controller: 'newMealCtrl'
     }).when('/my-earnings', {
-      templateUrl : 'my-earnings.html'
+      templateUrl : 'my-earnings.html',
+      controller: 'earningsCalc'
     });
   }])
-  .controller('newMealCtrl', ['$scope', function($scope) {
-    $scope.cust = {};
-    $scope.staff = {
-      meals : 0,
-      tips : 0,
-      avgTips : 0 
-    };
-
-  $scope.compute = function() {
-    $scope.cust.subtotal = $scope.bill.base_price * (($scope.bill.tax_rate/100)+1);
-    $scope.cust.tip = $scope.cust.subtotal * (($scope.bill.tip_percentage/100));
-    $scope.cust.total = $scope.cust.tip + $scope.cust.subtotal;
-    $scope.staff.tips += $scope.cust.tip;
-    $scope.staff.meals++;
-
-    if ( $scope.staff.meals > 0 ) {
-      $scope.staff.avgTips = $scope.staff.tips/$scope.staff.meals;
-    }   
-  };
-
-  $scope.submit = function() { 
-    console.log(mealDetails);
-    if($scope.mealDetails.$submitted && $scope.mealDetails.$valid && !($scope.mealDetails.$pristine)) {
-        $scope.compute();
-    }
-  };
-
-  $scope.cancel = function() {  
-    $scope.mealDetails.$setPristine();
-    $scope.bill = {};
-  };
-
-  $scope.reset = function() {
-    $scope.mealDetails.$setPristine();
-    $scope.bill = {};
-    $scope.cust = {};
-    $scope.staff.meals = 0;
-    $scope.staff.tips = 0;
-    $scope.staff.avgTips = 0;
-  };
-
+  .controller('newMealCtrl', ['$scope', 'Data', function($scope, Data) {
+    $scope.Data = Data;
+  }])
+  .controller('earningsCalc', ['$scope', 'Data', function($scope, Data) {
+    $scope.Data = Data;
   }]);
 
-//angular.module('waitstaffMod').controller('mealEntry', ['$scope', function($scope) { 
-//
-//
-//}]);
-//
-//angular.module('waitstaffMod').controller('earningsCalc', ['$scope', function($scope) { 
-//
-//
-//}]);
 
 
 
