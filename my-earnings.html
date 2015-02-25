@@ -3,9 +3,9 @@
   <section class="mealOutput">
     <div class="earning">
       <header class="box-heading">My Earnings for This Shift</header>
-      <p>Tip Total: {{staff.tips | currency}}</p>
-      <p>Meal count: {{staff.meals}}</p>
-      <p>Average Tip Per Meal: {{staff.avgTips | currency}}</p>
+      <p>Tip Total: {{$parent.staff.tips | currency}}</p>
+      <p>Meal count: {{$parent.staff.meals}}</p>
+      <p>Average Tip Per Meal: {{$parent.staff.avgTips | currency}}</p>
     </div>
     <button class="reset" ng-click="reset()">Reset</button>
   </section>

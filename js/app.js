@@ -2,20 +2,14 @@
 angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
   .config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
-      templateUrl : 'home.html',
-      controller : 'HomeCtrl'
+      templateUrl : 'home.html'
     }).when('/new-meal', {
-      templateUrl : 'new-meal.html',
-      controller: 'newMealCtrl'
+      templateUrl : 'new-meal.html'
     }).when('/my-earnings', {
-      templateUrl : 'my-earnings.html',
-      controller: 'newMealCtrl'
+      templateUrl : 'my-earnings.html'
     });
   }])
-  .controller('HomeCtrl', ['$scope', function($scope) {
-
-  }])
-  .controller('newMealCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+  .controller('newMealCtrl', ['$scope', function($scope) {
     $scope.cust = {};
     $scope.staff = {
       meals : 0,
@@ -36,8 +30,9 @@ angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
   };
 
   $scope.submit = function() { 
+    console.log(mealDetails);
     if($scope.mealDetails.$submitted && $scope.mealDetails.$valid && !($scope.mealDetails.$pristine)) {
-      $scope.compute();
+        $scope.compute();
     }
   };
 
@@ -56,6 +51,18 @@ angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
   };
 
   }]);
+
+//angular.module('waitstaffMod').controller('mealEntry', ['$scope', function($scope) { 
+//
+//
+//}]);
+//
+//angular.module('waitstaffMod').controller('earningsCalc', ['$scope', function($scope) { 
+//
+//
+//}]);
+
+
 
 
 
