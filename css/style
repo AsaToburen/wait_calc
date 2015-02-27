@@ -1,0 +1,40 @@
+/*
+Error: Inconsistent indentation: 2 spaces were used for indentation, but the rest of the document was indented using 8 spaces.
+        on line 42 of style
+
+37: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+38: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+39: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+40: *\/
+41: body:before {
+42:   white-space: pre;
+43:   font-family: monospace;
+44:   content: "Error: Invalid property: \"Backtrace:\" (no value).\A         on line 4 of style\A \A 1: /*\A 2: Errno::ENOENT: No such file or directory @ rb_sysopen - style\A 3: \A 4: Backtrace:\A 5: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:482:in `read'\A 6: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:482:in `update_stylesheet'\A 7: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'\A 8: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `each'\A 9: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'"; }
+
+Backtrace:
+style:42
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:473:in `block in tabulate'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:431:in `each'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:431:in `each_with_index'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:431:in `tabulate'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:396:in `_to_tree'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Inconsistent indentation: 2 spaces were used for indentation, but the rest of the document was indented using 8 spaces.\A         on line 42 of style\A \A 37: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'\A 38: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'\A 39: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'\A 40: */\A 41: body:before {\A 42:   white-space: pre;\A 43:   font-family: monospace;\A 44:   content: \"Error: Invalid property: \\"Backtrace:\\" (no value).\A         on line 4 of style\A \A 1: /*\A 2: Errno::ENOENT: No such file or directory @ rb_sysopen - style\A 3: \A 4: Backtrace:\A 5: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:482:in `read'\A 6: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:482:in `update_stylesheet'\A 7: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'\A 8: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `each'\A 9: /Users/asatoburen-pettit/.rvm/gems/ruby-2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'\"; }"; }

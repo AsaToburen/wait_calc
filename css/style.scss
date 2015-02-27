@@ -134,6 +134,93 @@ nav {
 
 body {
 
+
+  @keyframes loadAnimation {
+  0% {
+    transform: rotate(-20deg);
+    height: 5px;
+    width: 75px;
+  }
+  5% {
+    height: 5px;
+    width: 75px;    
+  }
+  30% {
+    transform: rotate(380deg);
+    height: 5px;
+    width: 75px;    
+  }
+  40% {
+    transform: rotate(360deg);
+    height: 5px;
+    width: 75px;    
+  } 
+  55% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 5px;    
+  }
+  65% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 85px;    
+  }
+  68% {
+    transform: rotate(0deg);
+    height: 5px;
+  }
+  75% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 1px;    
+  }
+  78% {
+    height: 5px;
+    width: 5px;    
+  }
+  90% {
+    height: 5px;
+    width: 75px;  
+    transform: rotate(0deg);
+  }
+  99%, 100% {
+    height: 5px;
+    width: 75px;   
+    transform: rotate(-20deg);
+  }
+}
+
+.loading {
+  position:relative;
+}
+
+.loading:before {
+  display: inline-block;
+  width: 75px;
+  height: 5px;
+  background: #6fbbf7;
+  border-radius: 100px;
+  transform-origin: center center;
+  animation: loadAnimation 1s ease infinite;
+}
+
+
+
+
+
+
+
+.animate-view.ng-enter,
+    .animate-view.ng-leave {
+        transition:1s linear opacity;
+    }
+.animate-view.ng-enter { opacity:0; }
+.animate-view.ng-enter.ng-enter-active { opacity:1; }
+.animate-view.ng-leave { opacity:1; }
+.animate-view.ng-leave.ng-leave-active { opacity:0; }
+
+
+
   .meal-entry {
     width: 30%;
     border: 2px solid black;

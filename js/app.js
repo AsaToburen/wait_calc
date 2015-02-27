@@ -1,4 +1,4 @@
-angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
+angular.module('waitstaffMod', ['ngMessages', 'ngRoute', 'ngAnimate'])
   .factory('Data', function () {
     return { 
       cust : {},
@@ -8,31 +8,31 @@ angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
         avgTips : 0 
       },
       compute : function() {
-        cust.subtotal = bill.base_price * ((bill.tax_rate/100)+1);
-        cust.tip = cust.subtotal * ((bill.tip_percentage/100));
-        cust.total = cust.tip + cust.subtotal;
-        staff.tips += cust.tip;
-        staff.meals++;
-        if ( staff.meals > 0 ) {
-          staff.avgTips = staff.tips/staff.meals;
-        }   
-      },
-      submit : function() { 
-        if(mealDetails.$submitted && mealDetails.$valid && !(mealDetails.$pristine)) {
-            compute();
+        this.cust.subtotal = this.bill.base_price * ((this.bill.tax_rate/100)+1);
+        this.cust.tip = this.cust.subtotal * ((this.bill.tip_percentage/100));
+        this.cust.total = this.cust.tip + this.cust.subtotal;
+        this.staff.tips += this.cust.tip;
+        this.staff.meals++;
+        if ( this.staff.meals > 0 ) {
+          this.staff.avgTips = this.staff.tips/this.staff.meals;
         }
       },
-      cancel : function() {  
-        mealDetails.$setPristine();
-        bill = {};
+      submit : function() { 
+        if(this.mealDetails.$submitted && this.mealDetails.$valid && !(this.mealDetails.$pristine)) {
+            this.compute();
+        }   
       },
+      cancel : function() {  
+        this.mealDetails.$setPristine();
+        this.bill = {};
+      },
+
       reset : function() {
-        mealDetails.$setPristine();
-        bill = {};
-        cust = {};
-        staff.meals = 0;
-        staff.tips = 0;
-        staff.avgTips = 0;
+        this.bill = {};
+        this.cust = {};
+        this.staff.meals = 0;
+        this.staff.tips = 0;
+        this.staff.avgTips = 0;
       }
     };
   })
@@ -45,10 +45,29 @@ angular.module('waitstaffMod', ['ngMessages', 'ngRoute'])
     }).when('/my-earnings', {
       templateUrl : 'my-earnings.html',
       controller: 'earningsCalc'
-    });
+    }).when('/error', {
+        template : '<p>Error Page Not Found</p>'
+    })
+        .otherwise({
+            redirectTo : '/error'
+        });
   }])
+  .run(function($rootScope, $location, $timeout) {
+    $rootScope.$on('$routeChangeError', function() {
+      $location.path("/error");
+    });
+    $rootScope.$on('$routeChangeStart', function() {
+      $rootScope.isLoading = true;
+    });
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $timeout(function() {
+        $rootScope.isLoading = false;
+      }, 500);
+    });
+  })
   .controller('newMealCtrl', ['$scope', 'Data', function($scope, Data) {
     $scope.Data = Data;
+    
   }])
   .controller('earningsCalc', ['$scope', 'Data', function($scope, Data) {
     $scope.Data = Data;

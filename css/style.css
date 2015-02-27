@@ -7,39 +7,31 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after {
   content: "";
-  content: none;
-}
+  content: none; }
 
 q:before, q:after {
   content: "";
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 /*=========================
   Main Content Styles
@@ -48,98 +40,141 @@ body {
   width: 100%;
   box-sizing: border-box;
   margin-top: 1.7%;
-  font-family: Verdana, sans-serif;
-}
-body h1 {
-  text-align: center;
-  font-size: 3.7em;
-  line-height: 1.75em;
-}
-body .home-pg {
-  width: 42%;
-  margin: 1.2em auto;
-  line-height: 2em;
-}
+  font-family: Verdana, sans-serif; }
+  body h1 {
+    text-align: center;
+    font-size: 3.7em;
+    line-height: 1.75em; }
+  body .home-pg {
+    width: 42%;
+    margin: 1.2em auto;
+    line-height: 2em; }
 
 nav {
   width: 50%;
   margin: 0 auto;
   height: 3em;
-  text-align: center;
-}
-nav a {
-  display: inline-block;
-  padding: .5em 1.7em;
-}
-nav .n-meal {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-}
+  text-align: center; }
+  nav a {
+    display: inline-block;
+    padding: .5em 1.7em; }
+  nav .n-meal {
+    border-left: 2px solid black;
+    border-right: 2px solid black; }
 
 section {
   width: 30%;
   height: 73%;
   margin: 3% auto -1% auto;
-  vertical-align: top;
-}
-section .reset {
-  width: 7em;
-  border-radius: 0;
-  padding: 2.75%;
-  margin-left: 12em;
-  margin-top: 4em;
-}
-section div {
-  border: 2px solid black;
-}
-section p {
-  text-align: center;
-  line-height: 2em;
-}
-section input {
-  text-align: center;
-}
-section input.ng-dirty.ng-invalid {
-  border: 2px solid red;
-}
-section .error {
-  height: 22%;
-  margin-top: 8%;
-  width: 75%;
-  border: 0;
-}
-section .error span {
-  width: 100%;
-  display: block;
-  line-height: 1.75em;
-  margin-left: 1.5%;
-}
+  vertical-align: top; }
+  section .reset {
+    width: 7em;
+    border-radius: 0;
+    padding: 2.75%;
+    margin-left: 12em;
+    margin-top: 4em; }
+  section div {
+    border: 2px solid black; }
+  section p {
+    text-align: center;
+    line-height: 2em; }
+  section input {
+    text-align: center; }
+  section input.ng-dirty.ng-invalid {
+    border: 2px solid red; }
+  section .error {
+    height: 22%;
+    margin-top: 8%;
+    width: 75%;
+    border: 0; }
+    section .error span {
+      width: 100%;
+      display: block;
+      line-height: 1.75em;
+      margin-left: 1.5%; }
 
+@keyframes loadAnimation {
+  0% {
+    transform: rotate(-20deg);
+    height: 5px;
+    width: 75px; }
+  5% {
+    height: 5px;
+    width: 75px; }
+  30% {
+    transform: rotate(380deg);
+    height: 5px;
+    width: 75px; }
+  40% {
+    transform: rotate(360deg);
+    height: 5px;
+    width: 75px; }
+  55% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 5px; }
+  65% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 85px; }
+  68% {
+    transform: rotate(0deg);
+    height: 5px; }
+  75% {
+    transform: rotate(0deg);
+    height: 5px;
+    width: 1px; }
+  78% {
+    height: 5px;
+    width: 5px; }
+  90% {
+    height: 5px;
+    width: 75px;
+    transform: rotate(0deg); }
+  99%, 100% {
+    height: 5px;
+    width: 75px;
+    transform: rotate(-20deg); } }
+body .loading {
+  position: relative; }
+body .loading:before {
+  display: inline-block;
+  width: 75px;
+  height: 5px;
+  background: #6fbbf7;
+  border-radius: 100px;
+  transform-origin: center center;
+  animation: loadAnimation 1s ease infinite; }
+body .animate-view.ng-enter,
+body .animate-view.ng-leave {
+  transition: 1s linear opacity; }
+body .animate-view.ng-enter {
+  opacity: 0; }
+body .animate-view.ng-enter.ng-enter-active {
+  opacity: 1; }
+body .animate-view.ng-leave {
+  opacity: 1; }
+body .animate-view.ng-leave.ng-leave-active {
+  opacity: 0; }
 body .meal-entry {
   width: 30%;
   border: 2px solid black;
-  height: 16.9em;
-}
-body .meal-entry header {
-  margin-bottom: .5em;
-}
-body .meal-entry p {
-  line-height: 3em;
-  text-align: right;
-  margin-right: 8em;
-}
-body .meal-entry input {
-  width: 20%;
-}
-body .meal-entry button {
-  width: 7em;
-  border-radius: 0;
-  padding: 2% 0%;
-  margin-top: 1em;
-}
-body .meal-entry .submit {
-  margin-left: 10em;
-}
+  height: 16.9em; }
+  body .meal-entry header {
+    margin-bottom: .5em; }
+  body .meal-entry p {
+    line-height: 3em;
+    text-align: right;
+    margin-right: 8em; }
+  body .meal-entry input {
+    width: 20%; }
+  body .meal-entry button {
+    width: 7em;
+    border-radius: 0;
+    padding: 2% 0%;
+    margin-top: 1em; }
+  body .meal-entry .submit {
+    margin-left: 10em; }
 body .box-heading {
   width: 100%;
   height: 2.3em;
@@ -148,32 +183,25 @@ body .box-heading {
   padding: 4% 4%;
   font-size: 1.2em;
   box-sizing: border-box;
-  border-bottom: 2px solid #DDDDDD;
-}
+  border-bottom: 2px solid #DDDDDD; }
 body .customer {
-  height: 12em;
-}
-body .customer header {
-  margin-bottom: 1em;
-}
-body .customer p {
-  text-align: right;
-  margin-right: 12em;
-}
-body .customer hr {
-  color: black;
-  width: 40%;
-  float: left;
-  margin-left: 3em;
-}
+  height: 12em; }
+  body .customer header {
+    margin-bottom: 1em; }
+  body .customer p {
+    text-align: right;
+    margin-right: 12em; }
+  body .customer hr {
+    color: black;
+    width: 40%;
+    float: left;
+    margin-left: 3em; }
 body .earning {
-  height: 12em;
-}
-body .earning p {
-  text-align: right;
-  margin-right: 3.2em;
-  margin-top: .5em;
-  line-height: 2.3em;
-}
+  height: 12em; }
+  body .earning p {
+    text-align: right;
+    margin-right: 3.2em;
+    margin-top: .5em;
+    line-height: 2.3em; }
 
 /*# sourceMappingURL=style.css.map */
